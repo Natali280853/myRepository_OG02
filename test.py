@@ -29,3 +29,5 @@ except ValueError:
     print("Ошибка: Некорректный ввод числа!")
 except Exception as e:
     print(f"Необработанное исключение: {e}")
+
+print('Это изменения в новой ветке')
