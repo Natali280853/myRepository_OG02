@@ -1,23 +1,31 @@
-oper_add = '+'
-oper_sub = '-'
-oper_mult = '*'
-oper_div = '/'
+op_add = '+'
+op_sub = '-'
+op_mult = '*'
+op_div = '/'
 
-num1 = float(input("Введите первое число: "))
-num2 = float(input("Введите второе число: "))
+try:
+    num1 = float(input('Введите первое число: '))
+    num2 = float(input('Введите второе число: '))
+    oper_usr = input("Введите операцию (" + op_add + ", " + op_sub + ", " + op_mult + ", " + op_div + "): ")
 
-oper_usr = input("Введите операцию (" + oper_add + ", " + oper_sub + ", " + oper_mult + ", " + oper_div + "): ")
+    if oper_usr == op_add:
+        print(num1 + num2)
 
-if oper_usr == oper_add:
-    print(num1 + num2)
+    elif oper_usr == op_sub:
+        print(num1 - num2)
 
-elif oper_usr == oper_sub:
-    print(num1 - num2)
+    elif oper_usr == op_mult:
+        print(num1 * num2)
 
-elif oper_usr == oper_mult:
-    print(num1 * num2)
+    elif oper_usr == op_div:
+        if num2 == 0:
+            print("Ошибка: деление на ноль!")
+        else:
+            print(num1 / num2)
+    else:
+        print("Ошибка: Неизвестная операция!")
 
-elif oper_usr == oper_div:
-    print(num1 / num2)
-else:
-    print("Ошибка: Неизвестная операция!")
+except ValueError:
+    print("Ошибка: Некорректный ввод числа!")
+except Exception as e:
+    print(f"Необработанное исключение: {e}")
